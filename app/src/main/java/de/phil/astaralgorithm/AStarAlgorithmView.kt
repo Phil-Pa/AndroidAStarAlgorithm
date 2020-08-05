@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import kotlin.math.roundToInt
 
 
@@ -96,9 +97,39 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             return
 
         drawGridBackground(canvas)
+        drawGridTiles(canvas)
+        drawGridLines(canvas)
         drawDebugInfo(canvas)
 
         super.onDraw(canvas)
+    }
+
+    private fun drawGridTiles(canvas: Canvas) {
+        drawGridTile(canvas, 4, 9)
+        drawGridTile(canvas, 5, 4)
+        drawGridTile(canvas, 0, 0)
+    }
+
+    private fun drawGridTile(canvas: Canvas, indexX: Int, indexY: Int) {
+        val tileSize = width / numTiles.toFloat()
+
+        paint.color = pathTileColor
+
+        val xOffset = indexX * tileSize
+        val yOffset = indexY * tileSize
+
+        canvas.drawRect(xOffset, yOffset, xOffset + tileSize, yOffset + tileSize, paint)
+    }
+
+    private fun drawGridLines(canvas: Canvas) {
+        paint.color = Color.BLACK
+        val tileSize = width / numTiles.toFloat()
+
+        for (i in 1..numTiles) {
+            val lineOffset = i * tileSize
+            canvas.drawLine(0f, lineOffset, width.toFloat(), lineOffset, paint)
+            canvas.drawLine(lineOffset, 0f, lineOffset, width.toFloat(), paint)
+        }
     }
 
     private fun drawGridBackground(canvas: Canvas) {
