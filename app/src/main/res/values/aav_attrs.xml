@@ -4,6 +4,7 @@
         <attr name="obstacleTileColor" format="color"/>
         <attr name="pathTileColor" format="color"/>
         <attr name="emptyTileColor" format="color"/>
+        <attr name="debugTextColor" format="color"/>
         <attr name="showDebugInformation" format="boolean"/>
     </declare-styleable>
 </resources>
