@@ -7,6 +7,8 @@ import android.view.View
 
 class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
+    private var numTiles = 10
+
     private var showDebugInformation = false
 
     private var obstacleTileColor = Color.BLACK
@@ -21,8 +23,11 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             0, 0).apply {
 
             try {
-//                mShowText = getBoolean(R.styleable.ASta, false)
-//                textPos = getInteger(R.styleable.PieChart_labelPosition, 0)
+                numTiles = getInteger(R.styleable.AStarAlgorithmView_numTiles, 10)
+                showDebugInformation = getBoolean(R.styleable.AStarAlgorithmView_showDebugInformation, false)
+                obstacleTileColor = getColor(R.styleable.AStarAlgorithmView_obstacleTileColor, Color.BLACK)
+                pathTileColor = getColor(R.styleable.AStarAlgorithmView_pathTileColor, Color.YELLOW)
+                emptyTileColor = getColor(R.styleable.AStarAlgorithmView_emptyTileColor, Color.WHITE)
             } finally {
                 recycle()
             }
