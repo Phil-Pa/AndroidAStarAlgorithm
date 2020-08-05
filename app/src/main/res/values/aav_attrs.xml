@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="AStarAlgorithmView">
+        <attr name="numTiles" format="integer"/>
+        <attr name="obstacleTileColor" format="color"/>
+        <attr name="pathTileColor" format="color"/>
+        <attr name="emptyTileColor" format="color"/>
+        <attr name="showDebugInformation" format="boolean"/>
+    </declare-styleable>
+</resources>
