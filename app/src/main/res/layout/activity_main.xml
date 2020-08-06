@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:numTiles="20"
+        app:numTiles="70"
         app:showDebugInformation="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

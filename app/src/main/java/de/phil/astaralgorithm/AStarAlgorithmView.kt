@@ -11,6 +11,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import kotlin.math.roundToInt
+import kotlin.random.Random
 
 
 class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, attrs) {
@@ -104,16 +105,22 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         super.onDraw(canvas)
     }
 
+    private fun f(x: Int): Int {
+        return Random.nextInt(numTiles)
+    }
+
     private fun drawGridTiles(canvas: Canvas) {
-        drawGridTile(canvas, 4, 9)
-        drawGridTile(canvas, 5, 4)
-        drawGridTile(canvas, 0, 0)
+        val times = 10
+        for (i in 1..times)
+            for (x in 0 until numTiles)
+                drawGridTile(canvas, x, f(x))
     }
 
     private fun drawGridTile(canvas: Canvas, indexX: Int, indexY: Int) {
         val tileSize = width / numTiles.toFloat()
 
-        paint.color = pathTileColor
+        if (paint.color != pathTileColor)
+            paint.color = pathTileColor
 
         val xOffset = indexX * tileSize
         val yOffset = indexY * tileSize
