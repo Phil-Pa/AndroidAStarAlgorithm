@@ -12,13 +12,14 @@ class Heap<T : HeapItem<T>>(val maxHeapSize: Int) {
         size++
     }
 
-    fun removeFirst(): HeapItem<T> {
+    @Suppress("UNCHECKED_CAST")
+    fun removeFirst(): T {
         val firstItem = items[0] ?: throw IllegalStateException("cant remove item when heap is empty")
         size--
         val lastItem = items[size] ?: throw IllegalStateException("items at index $size is null")
         items[0] = lastItem
         sortDown(lastItem)
-        return firstItem
+        return firstItem as T
     }
 
     fun updateItem(item: HeapItem<T>) {

@@ -2,15 +2,15 @@ package de.phil.astaralgorithm
 
 import de.phil.astaralgorithm.datastructure.HeapItem
 
-class Tile(val type: TileType, val gridX: Int, val gridY: Int, override var heapIndex: Int = 0) :
+class Tile(var type: TileType, val gridX: Int, val gridY: Int, override var heapIndex: Int = 0) :
     HeapItem<Tile> {
 
-    var parent: Tile? = null
+    lateinit var parent: Tile
 
     var gCost = 0
     var hCost = 0
 
-    val walkable: Boolean
+    val isWalkable: Boolean
         get() = type != TileType.WALL && type != TileType.PATH
 
     private val fCost: Int
@@ -38,7 +38,6 @@ class Tile(val type: TileType, val gridX: Int, val gridY: Int, override var heap
         result = 31 * result + gridX
         result = 31 * result + gridY
         result = 31 * result + heapIndex
-        result = 31 * result + (parent?.hashCode() ?: 0)
         result = 31 * result + gCost
         result = 31 * result + hCost
         return result
