@@ -64,7 +64,7 @@
         android:id="@+id/seekbar_percentWalls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="90"
+        android:max="100"
         android:min="10"
         android:progress="20"
         app:layout_constraintTop_toBottomOf="@+id/seekbar_numTiles" />

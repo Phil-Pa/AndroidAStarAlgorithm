@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             astar_view.solve()
         }
 
+        seekbar_numTiles.max = resources.displayMetrics.widthPixels / 4
         seekbar_numTiles.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
                 astar_view.numTiles = progress
