@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c35b2af-9e44-4ded-b794-956febb8ad14" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/Tile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/Tile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Array2D.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Array2D.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Heap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Heap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/de/phil/astaralgorithm/datastructure/Array2DTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/de/phil/astaralgorithm/datastructure/Array2DTest.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="Kotlin Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fgarVAJXZ9UwV7QjAKPtOrlCQo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/de/phil/astaralgorithm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="de.phil.astaralgorithm.datastructure" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="de.phil.astaralgorithm" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="de.phil.astaralgorithm.datastructure" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration name="Array2DTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.phil.astaralgorithm.datastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.phil.astaralgorithm.datastructure" />
+      <option name="MAIN_CLASS_NAME" value="de.phil.astaralgorithm.datastructure.Array2DTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TileTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.phil.astaralgorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.phil.astaralgorithm" />
+      <option name="MAIN_CLASS_NAME" value="de.phil.astaralgorithm.TileTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.phil.astaralgorithm.datastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.phil.astaralgorithm.datastructure" />
+      <option name="MAIN_CLASS_NAME" value="de.phil.astaralgorithm.datastructure.HeapTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.Array2DTest" />
+        <item itemvalue="Android JUnit.TileTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c35b2af-9e44-4ded-b794-956febb8ad14" name="Default Changelist" comment="" />
+      <created>1596642388825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596642388825</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="240" width="442" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1597495187653">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="739" y="240" width="442" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1597495187653" />
+    <state x="721" y="166" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1597483724505">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="721" y="166" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1597483724505" />
+    <state x="718" y="271" key="#xdebugger.evaluate" timestamp="1597499167615">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="718" y="271" key="#xdebugger.evaluate/0.0.1920.1044@0.0.1920.1044" timestamp="1597499167615" />
+    <state x="543" y="279" width="824" height="479" key="AndroidCreateResourceFileDialog" timestamp="1596642683849">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="543" y="279" width="824" height="479" key="AndroidCreateResourceFileDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596642683849" />
+    <state width="470" height="485" key="DebuggerActiveHint" timestamp="1597500344638">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="470" height="485" key="DebuggerActiveHint/0.0.1920.1044@0.0.1920.1044" timestamp="1597500344638" />
+    <state width="1878" height="342" key="GridCell.Tab.0.bottom" timestamp="1597499916057">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1597499916057" />
+    <state width="1878" height="342" key="GridCell.Tab.0.center" timestamp="1597499916055">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1597499916055" />
+    <state width="1878" height="342" key="GridCell.Tab.0.left" timestamp="1597499916054">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1597499916054" />
+    <state width="1878" height="342" key="GridCell.Tab.0.right" timestamp="1597499916056">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1597499916056" />
+    <state width="1878" height="342" key="GridCell.Tab.1.bottom" timestamp="1597499931568">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1597499931568" />
+    <state width="1878" height="342" key="GridCell.Tab.1.center" timestamp="1597499931567">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.1.center/0.0.1920.1044@0.0.1920.1044" timestamp="1597499931567" />
+    <state width="1878" height="342" key="GridCell.Tab.1.left" timestamp="1597499931567">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.1.left/0.0.1920.1044@0.0.1920.1044" timestamp="1597499931567" />
+    <state width="1878" height="342" key="GridCell.Tab.1.right" timestamp="1597499931568">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1878" height="342" key="GridCell.Tab.1.right/0.0.1920.1044@0.0.1920.1044" timestamp="1597499931568" />
+    <state x="449" y="156" key="SettingsEditor" timestamp="1597484032740">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="449" y="156" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1597484032740" />
+    <state x="735" y="298" width="429" height="434" key="chooseDestDirectoryDialog" timestamp="1596701988437">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="735" y="298" width="429" height="434" key="chooseDestDirectoryDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596701988437" />
+    <state x="100" y="99" width="1720" height="844" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596642570374">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="100" y="99" width="1720" height="844" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596642570374" />
+    <state x="626" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1597482741562">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="626" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1597482741562" />
+    <state x="737" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596710698705">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="737" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1044@0.0.1920.1044" timestamp="1596710698705" />
+    <state x="681" y="241" width="548" height="554" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1596701988468">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="681" y="241" width="548" height="554" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1596701988467" />
+    <state x="704" y="166" width="501" height="705" key="refactoring.ChangeSignatureDialog" timestamp="1597497122422">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="704" y="166" width="501" height="705" key="refactoring.ChangeSignatureDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1597497122422" />
+    <state x="624" y="239" key="run.anything.popup" timestamp="1596647779997">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="624" y="239" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1596647779997" />
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1597499370327">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1597499370327" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/AStarAlgorithmView.kt</url>
+          <line>80</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/AStarAlgorithm.kt</url>
+          <line>74</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Heap.kt</url>
+          <line>61</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/de/phil/astaralgorithm/datastructure/Heap.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

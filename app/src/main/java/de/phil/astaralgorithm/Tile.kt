@@ -26,11 +26,13 @@ class Tile(var type: TileType, val gridX: Int, val gridY: Int, override var heap
 
     override fun equals(other: Any?): Boolean {
 
-        if (other is Tile) {
-            return gridX == other.gridX && gridY == other.gridY
-        }
+        if (this === other)
+            return true
 
-        return super.equals(other)
+        if (other is Tile)
+            return gridX == other.gridX && gridY == other.gridY
+
+        return false
     }
 
     override fun hashCode(): Int {

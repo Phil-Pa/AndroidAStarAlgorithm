@@ -9,6 +9,7 @@ class Heap<T : HeapItem<T>>(val maxHeapSize: Int) {
     fun add(item: HeapItem<T>) {
         item.heapIndex = size
         items[size] = item
+        sortUp(item)
         size++
     }
 
@@ -17,6 +18,7 @@ class Heap<T : HeapItem<T>>(val maxHeapSize: Int) {
         val firstItem = items[0] ?: throw IllegalStateException("cant remove item when heap is empty")
         size--
         val lastItem = items[size] ?: throw IllegalStateException("items at index $size is null")
+        lastItem.heapIndex = 0
         items[0] = lastItem
         sortDown(lastItem)
         return firstItem as T

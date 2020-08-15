@@ -1,5 +1,7 @@
 package de.phil.astaralgorithm.datastructure
 
+import de.phil.astaralgorithm.Tile
+import de.phil.astaralgorithm.TileType
 import org.junit.Assert.*
 import org.junit.Test
 import kotlin.random.Random
@@ -60,6 +62,16 @@ class HeapTest {
         // contains of 1 millions items takes less than 50 microseconds
         assertTrue(nanos < 50000)
         println(nanos)
+    }
+
+    @Test
+    fun testEquals() {
+        val tile = Tile(TileType.WALL, 0, 4)
+        val heap = Heap<Tile>(10)
+        heap.add(tile)
+        heap.add(tile)
+
+        assertEquals(1, heap.size)
     }
 
 }

@@ -8,11 +8,15 @@ class Array2D<T>(val sizeX: Int, val sizeY: Int) {
 
     @Suppress("UNCHECKED_CAST")
     fun get(x: Int, y: Int): T {
-        return items[x * sizeX + y] as T
+        return items[getIndex(x, y)] as T
+    }
+
+    fun getIndex(x: Int, y: Int): Int {
+        return x + y * sizeX
     }
 
     fun set(x: Int, y: Int, item: T) {
-        items[x * sizeX + y] = item
+        items[getIndex(x, y)] = item
     }
 
     private var i = 0

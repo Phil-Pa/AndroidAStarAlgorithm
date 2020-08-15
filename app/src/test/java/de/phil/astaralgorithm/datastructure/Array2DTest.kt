@@ -15,4 +15,15 @@ class Array2DTest {
         assertEquals(24, array.length)
     }
 
+    @Test
+    fun testGetIndex() {
+        var array = Array2D<Int>(4, 4)
+
+        assertEquals(10, array.getIndex(2, 2))
+        assertEquals(11, array.getIndex(3, 2))
+
+        array = Array2D(2, 7)
+        assertEquals(5, array.getIndex(1, 2))
+    }
+
 }
