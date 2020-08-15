@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:numTiles="40"
-        app:diagonal="true"
+        app:diagonal="false"
         app:showDebugInformation="true" />
 
     <androidx.appcompat.widget.AppCompatSpinner
@@ -42,5 +42,31 @@
         android:text="Solve"
         app:layout_constraintLeft_toRightOf="@id/switch_debug"
         app:layout_constraintTop_toBottomOf="@id/astar_view"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_create_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Grid"
+        app:layout_constraintLeft_toRightOf="@id/button_solve"
+        app:layout_constraintTop_toBottomOf="@id/astar_view"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar_numTiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="10"
+        android:progress="20"
+        app:layout_constraintTop_toBottomOf="@+id/button_solve" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar_percentWalls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="90"
+        android:min="10"
+        android:progress="20"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_numTiles" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

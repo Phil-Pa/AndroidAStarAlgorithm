@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,25 @@ class MainActivity : AppCompatActivity() {
 
         button_solve.setOnClickListener {
             astar_view.solve()
+        }
+
+        seekbar_numTiles.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
+                astar_view.numTiles = progress
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+
+            }
+
+        })
+
+        button_create_grid.setOnClickListener {
+            astar_view.createRandomGrid(seekbar_percentWalls.progress)
         }
     }
 }

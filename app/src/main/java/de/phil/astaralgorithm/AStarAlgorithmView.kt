@@ -22,7 +22,16 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         private const val DEBUG_TEXT_PADDING = 12f
     }
 
-    private var numTiles = 10
+    private var mNumTiles = 10
+    var numTiles: Int
+        get() = mNumTiles
+        set(value) {
+            mNumTiles = value
+            grid = Array2D(numTiles, numTiles)
+            initGrid()
+            invalidate()
+        }
+
     private var mShowDebugInformation = false
     private var startTileColor = Color.CYAN
     private var endTileColor = Color.MAGENTA
@@ -327,6 +336,11 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             BASE_VERTICAL_OFFSET + paint.textSize * 8 + DEBUG_TEXT_PADDING,
             paint
         )
+    }
+
+    fun createRandomGrid(percentWalls: Int) {
+        grid = AStarAlgorithm.createGrid(numTiles, percentWalls)
+        invalidate()
     }
 
 
