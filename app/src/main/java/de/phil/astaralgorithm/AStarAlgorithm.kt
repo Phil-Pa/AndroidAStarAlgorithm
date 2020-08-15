@@ -45,7 +45,7 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
         return index
     }
 
-    private fun findTile(type: TileType): Tile {
+    private fun findTile(type: TileType): Tile? {
         //TODO: make iterator work
 //        for (tile in grid)
 //            if (tile.type == type)
@@ -59,13 +59,13 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
             }
 
 
-        throw IllegalArgumentException("tile type $type not found in tiles")
+        return null
     }
 
-    fun findPath(diagonal: Boolean = true): List<Tile> {
+    fun findPath(diagonal: Boolean = true) {
 
-        val startTile = findTile(TileType.START)
-        val endTile = findTile(TileType.END)
+        val startTile = findTile(TileType.START) ?: return
+        val endTile = findTile(TileType.END) ?: return
 
         val openSet = Heap<Tile>(grid.length)
         val closedSet = Heap<Tile>(grid.length)
@@ -77,7 +77,7 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
 
             if (currentTile == endTile) {
                 retracePath(startTile, endTile)
-                return path
+                return
             }
 
             val neighborsLength = getNeighbors(currentTile, diagonal)
@@ -86,11 +86,11 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
                 if (!neighbor.isWalkable || neighbor in closedSet)
                     continue
 
-                val newMovementCostToNeighbour = currentTile.gCost + getDistance(currentTile, neighbor)
-                if (newMovementCostToNeighbour >= neighbor.gCost && neighbor in openSet)
+                val newMovementCostToNeighbor = currentTile.gCost + getDistance(currentTile, neighbor)
+                if (newMovementCostToNeighbor >= neighbor.gCost && neighbor in openSet)
                     continue
 
-                neighborBuffer[i]!!.gCost = newMovementCostToNeighbour
+                neighborBuffer[i]!!.gCost = newMovementCostToNeighbor
                 neighbor.hCost = getDistance(neighbor, endTile)
                 neighbor.parent = currentTile
 
@@ -100,8 +100,6 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
                     openSet.updateItem(neighbor)
             }
         }
-
-        throw IllegalArgumentException("could not find path")
     }
 
     private fun retracePath(startTile: Tile, endTile: Tile) {

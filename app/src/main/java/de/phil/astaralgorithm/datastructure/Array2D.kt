@@ -8,11 +8,11 @@ class Array2D<T>(val sizeX: Int, val sizeY: Int) {
 
     @Suppress("UNCHECKED_CAST")
     fun get(x: Int, y: Int): T {
-        return items[y * sizeX + x] as T
+        return items[x * sizeX + y] as T
     }
 
     fun set(x: Int, y: Int, item: T) {
-        items[y * sizeX + x] = item
+        items[x * sizeX + y] = item
     }
 
     private var i = 0
@@ -26,4 +26,6 @@ class Array2D<T>(val sizeX: Int, val sizeY: Int) {
     }
 
     operator fun iterator() = this
+
+    operator fun contains(item: T) = item in items
 }

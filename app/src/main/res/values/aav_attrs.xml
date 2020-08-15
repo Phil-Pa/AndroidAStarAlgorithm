@@ -1,8 +1,13 @@
 <resources>
     <declare-styleable name="AStarAlgorithmView">
         <attr name="numTiles" format="integer"/>
-        <attr name="obstacleTileColor" format="color"/>
+        <attr name="showAnimation" format="boolean"/>
+        <attr name="diagonal" format="boolean"/>
+        <attr name="animationsPerSecond" format="integer"/>
+        <attr name="wallTileColor" format="color"/>
         <attr name="pathTileColor" format="color"/>
+        <attr name="startTileColor" format="color"/>
+        <attr name="endTileColor" format="color"/>
         <attr name="emptyTileColor" format="color"/>
         <attr name="debugTextColor" format="color"/>
         <attr name="showDebugInformation" format="boolean"/>

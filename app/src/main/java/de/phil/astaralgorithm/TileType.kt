@@ -6,6 +6,11 @@ enum class TileType {
     WALKABLE,
     PATH,
     START,
-    END
+    END;
+
+    companion object {
+        private val map = values().associateBy(TileType::ordinal)
+        fun fromInt(type: Int) = map[type] ?: error("")
+    }
 
 }
