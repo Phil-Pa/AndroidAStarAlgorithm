@@ -73,6 +73,7 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
 
         while (openSet.size > 0) {
             val currentTile = openSet.removeFirst()
+            currentTile.type = TileType.CLOSED_SET
             closedSet.add(currentTile)
 
             if (currentTile == endTile) {
@@ -94,9 +95,10 @@ class AStarAlgorithm(private val grid: Array2D<Tile>) {
                 neighbor.hCost = getDistance(neighbor, endTile)
                 neighbor.parent = currentTile
 
-                if (neighbor !in openSet)
+                if (neighbor !in openSet) {
+                    neighbor.type = TileType.OPEN_SET
                     openSet.add(neighbor)
-                else
+                } else
                     openSet.updateItem(neighbor)
             }
         }

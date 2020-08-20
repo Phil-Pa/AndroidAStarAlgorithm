@@ -9,6 +9,8 @@
         <attr name="startTileColor" format="color"/>
         <attr name="endTileColor" format="color"/>
         <attr name="emptyTileColor" format="color"/>
+        <attr name="openSetTileColor" format="color"/>
+        <attr name="closedSetTileColor" format="color"/>
         <attr name="debugTextColor" format="color"/>
         <attr name="showDebugInformation" format="boolean"/>
     </declare-styleable>

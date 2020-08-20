@@ -8,6 +8,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.view.MotionEvent
+import android.view.SurfaceHolder
 import android.view.View
 import de.phil.astaralgorithm.datastructure.Array2D
 import kotlin.math.roundToInt
@@ -15,6 +16,7 @@ import kotlin.system.measureTimeMillis
 
 
 class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+//    SurfaceView(context, attrs), SurfaceHolder.Callback2 {
 
     companion object {
         private const val BASE_HORIZONTAL_OFFSET = 10f
@@ -39,14 +41,17 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
     private var pathTileColor = Color.GREEN
     private var emptyTileColor = Color.GRAY
     private var debugTextColor = Color.RED
+    private var openSetTileColor = Color.YELLOW
+    private var closedSetTileColor = Color.parseColor("#FF6600")
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val paint = Paint()
     private val tileWidth: Int
             get() = width / numTiles
     private val tileHeight: Int
             get() = height / numTiles
 
     private lateinit var grid: Array2D<Tile>
+    private var myHolder: SurfaceHolder? = null
 
     var tileTypePaint = TileType.WALL
     var animationsPerSecond = 2
@@ -115,6 +120,8 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
 
                 emptyTileColor =
                     getColor(R.styleable.AStarAlgorithmView_emptyTileColor, Color.GRAY)
+                openSetTileColor = getColor(R.styleable.AStarAlgorithmView_openSetTileColor, openSetTileColor)
+                closedSetTileColor = getColor(R.styleable.AStarAlgorithmView_closedSetTileColor, closedSetTileColor)
                 debugTextColor = getColor(R.styleable.AStarAlgorithmView_debugTextColor, Color.RED)
                 showAnimation = getBoolean(R.styleable.AStarAlgorithmView_showAnimation, false)
                 animationsPerSecond = getInteger(R.styleable.AStarAlgorithmView_animationsPerSecond, 2)
@@ -204,6 +211,8 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             TileType.PATH -> paint.color = pathTileColor
             TileType.START -> paint.color = startTileColor
             TileType.END -> paint.color = endTileColor
+            TileType.OPEN_SET -> paint.color = openSetTileColor
+            TileType.CLOSED_SET -> paint.color = closedSetTileColor
         }
 
         val tileSize = width / numTiles.toFloat()
@@ -342,6 +351,25 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         grid = AStarAlgorithm.createGrid(numTiles, percentWalls)
         invalidate()
     }
+
+//    override fun surfaceRedrawNeeded(holder: SurfaceHolder) {
+//        val canvas = holder.lockCanvas()
+//        onDraw(canvas)
+//    }
+//
+//    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
+//        if (width == 0 || height == 0)
+//            return
+//    }
+//
+//    override fun surfaceDestroyed(holder: SurfaceHolder) {
+//        holder.surface.release()
+//        myHolder = null
+//    }
+//
+//    override fun surfaceCreated(holder: SurfaceHolder) {
+//        myHolder = holder
+//    }
 
 
 }

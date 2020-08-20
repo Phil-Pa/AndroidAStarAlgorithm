@@ -2,6 +2,8 @@ package de.phil.astaralgorithm
 
 enum class TileType {
 
+    OPEN_SET,
+    CLOSED_SET,
     WALL,
     WALKABLE,
     PATH,
