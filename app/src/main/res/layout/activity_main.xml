@@ -79,31 +79,34 @@
         app:layout_constraintLeft_toRightOf="@id/button_solve"
         app:layout_constraintTop_toBottomOf="@id/zoom_layout"/>
 
-    <androidx.appcompat.widget.AppCompatSeekBar
+    <com.warkiz.widget.IndicatorSeekBar
         android:id="@+id/seekbar_numTiles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:min="10"
-        android:progress="20"
+        app:isb_max="100"
+        app:isb_min="10"
+        app:isb_progress="20"
+        app:isb_show_indicator="circular_bubble"
         app:layout_constraintTop_toBottomOf="@+id/button_solve" />
 
-    <androidx.appcompat.widget.AppCompatSeekBar
+    <com.warkiz.widget.IndicatorSeekBar
         android:id="@+id/seekbar_percentWalls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:min="10"
-        android:progress="20"
+        app:isb_max="100"
+        app:isb_min="10"
+        app:isb_progress="20"
+        app:isb_show_indicator="circular_bubble"
         app:layout_constraintTop_toBottomOf="@+id/seekbar_numTiles" />
 
-    <androidx.appcompat.widget.AppCompatSeekBar
+    <com.warkiz.widget.IndicatorSeekBar
         android:id="@+id/seekbar_maxPixelsPerTile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="10"
-        android:min="1"
-        android:progress="4"
+        app:isb_max="10"
+        app:isb_min="1"
+        app:isb_progress="4"
+        app:isb_show_indicator="circular_bubble"
         app:layout_constraintTop_toBottomOf="@+id/seekbar_percentWalls" />
 
     <androidx.appcompat.widget.AppCompatButton

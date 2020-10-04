@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.SeekBar
+import com.warkiz.widget.IndicatorSeekBar
+import com.warkiz.widget.OnSeekChangeListener
+import com.warkiz.widget.SeekParams
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,39 +40,45 @@ class MainActivity : AppCompatActivity() {
             astar_view.solve()
         }
 
-        seekbar_numTiles.max = resources.displayMetrics.widthPixels / maxPixelsPerTile
+        seekbar_numTiles.max = (resources.displayMetrics.widthPixels / maxPixelsPerTile).toFloat()
         astar_view.pixelsPerTile = maxPixelsPerTile
-        seekbar_numTiles.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
-                astar_view.numTiles = progress
+
+        seekbar_numTiles.setIndicatorTextFormat("\${Num tiles} %")
+        seekbar_numTiles.onSeekChangeListener = object : OnSeekChangeListener {
+            override fun onSeeking(seekParams: SeekParams?) {
+                if (seekParams != null)
+                    astar_view.numTiles = seekParams.progress
             }
 
-            override fun onStartTrackingTouch(p0: SeekBar?) {
-
-            }
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {
-
-            }
-
-        })
-
-        seekbar_maxPixelsPerTile.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                maxPixelsPerTile = progress
-                astar_view.pixelsPerTile = progress
-                seekbar_numTiles.max = resources.displayMetrics.widthPixels / maxPixelsPerTile
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
 
             }
 
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            override fun onStopTrackingTouch(seekBar: IndicatorSeekBar?) {
+
+            }
+        }
+
+        seekbar_maxPixelsPerTile.setIndicatorTextFormat("\${Pixels per tile} %")
+        seekbar_maxPixelsPerTile.onSeekChangeListener = object : OnSeekChangeListener {
+            override fun onSeeking(seekParams: SeekParams?) {
+                if (seekParams != null) {
+                    maxPixelsPerTile = seekParams.progress
+                    astar_view.pixelsPerTile = seekParams.progress
+                    seekbar_numTiles.max = (resources.displayMetrics.widthPixels / maxPixelsPerTile).toFloat()
+                }
+            }
+
+            override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
 
             }
 
-        })
+            override fun onStopTrackingTouch(seekBar: IndicatorSeekBar?) {
+
+            }
+        }
+
+        seekbar_percentWalls.setIndicatorTextFormat("\${Percent walls} %")
 
         button_create_grid.setOnClickListener {
             astar_view.createRandomGrid(seekbar_percentWalls.progress)
