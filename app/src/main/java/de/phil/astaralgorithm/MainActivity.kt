@@ -74,5 +74,9 @@ class MainActivity : AppCompatActivity() {
         button_create_grid.setOnClickListener {
             astar_view.createRandomGrid(seekbar_percentWalls.progress)
         }
+
+        button_resetZoom.setOnClickListener {
+            zoom_layout.zoomTo(1.0f, true)
+        }
     }
 }
