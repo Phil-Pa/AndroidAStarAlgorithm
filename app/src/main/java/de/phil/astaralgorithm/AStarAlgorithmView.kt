@@ -24,6 +24,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         private const val DEBUG_TEXT_PADDING = 12f
     }
 
+    var pixelsPerTile: Int = 4
     private var mNumTiles = 10
     var numTiles: Int
         get() = mNumTiles
@@ -243,6 +244,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         if (mShowDebugInformation) {
             val touchText = "touch: x=${lastTouchPositionX.roundToInt()}, y=${lastTouchPositionY.roundToInt()}"
             val numTilesText = "num tiles: $numTiles"
+            val pixelsPerTileText = "pixels per tile: $pixelsPerTile"
             val pathColorText = "path tile color: ${String.format("#%06X", 0xFFFFFF and pathTileColor)}"
             val wallColorText = "wall tile color: ${String.format("#%06X", 0xFFFFFF and wallTileColor)}"
             val emptyColorText = "empty tile color: ${String.format("#%06X", 0xFFFFFF and emptyTileColor)}"
@@ -258,6 +260,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
                 canvas,
                 touchText,
                 numTilesText,
+                pixelsPerTileText,
                 solveTimeMillisText,
                 pathColorText,
                 wallColorText,
@@ -277,6 +280,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         canvas: Canvas,
         touchText: String,
         numTilesText: String,
+        pixelsPerTileText: String,
         solveTimeMillisText: String,
         pathColorText: String,
         obstacleColorText: String,
@@ -289,6 +293,12 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         canvas.drawText(touchText, BASE_HORIZONTAL_OFFSET, BASE_VERTICAL_OFFSET, paint)
         canvas.drawText(
             numTilesText,
+            BASE_HORIZONTAL_OFFSET,
+            BASE_VERTICAL_OFFSET + paint.textSize * step++,
+            paint
+        )
+        canvas.drawText(
+            pixelsPerTileText,
             BASE_HORIZONTAL_OFFSET,
             BASE_VERTICAL_OFFSET + paint.textSize * step++,
             paint
@@ -342,7 +352,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             0f,
             0f,
             longestTextLength + DEBUG_TEXT_PADDING,
-            BASE_VERTICAL_OFFSET + paint.textSize * 8 + DEBUG_TEXT_PADDING,
+            BASE_VERTICAL_OFFSET + paint.textSize * 9 + DEBUG_TEXT_PADDING,
             paint
         )
     }

@@ -7,23 +7,51 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <de.phil.astaralgorithm.AStarAlgorithmView
-        android:id="@+id/astar_view"
+    <com.otaliastudios.zoom.ZoomLayout
+        android:id="@+id/zoom_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:scrollbars="vertical|horizontal"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:numTiles="40"
-        app:diagonal="false"
-        app:showDebugInformation="true" />
+        app:transformation="centerInside"
+        app:transformationGravity="auto"
+        app:alignment="center"
+        app:overScrollHorizontal="true"
+        app:overScrollVertical="true"
+        app:overPinchable="false"
+        app:horizontalPanEnabled="false"
+        app:verticalPanEnabled="false"
+        app:zoomEnabled="true"
+        app:flingEnabled="false"
+        app:scrollEnabled="true"
+        app:oneFingerScrollEnabled="false"
+        app:twoFingersScrollEnabled="true"
+        app:threeFingersScrollEnabled="true"
+        app:minZoom="0.5"
+        app:minZoomType="zoom"
+        app:maxZoom="10.0"
+        app:maxZoomType="zoom"
+        app:animationDuration="280"
+        app:hasClickableChildren="true">
+
+        <de.phil.astaralgorithm.AStarAlgorithmView
+            android:id="@+id/astar_view"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            app:diagonal="false"
+            app:numTiles="40"
+            app:showDebugInformation="true" />
+
+    </com.otaliastudios.zoom.ZoomLayout>
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner_tile_types"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/astar_view"
+        app:layout_constraintTop_toBottomOf="@id/zoom_layout"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.SwitchCompat
@@ -31,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
-        app:layout_constraintTop_toBottomOf="@id/astar_view"
+        app:layout_constraintTop_toBottomOf="@id/zoom_layout"
         app:layout_constraintLeft_toRightOf="@id/spinner_tile_types"
         android:text="Debug"/>
 
@@ -41,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="Solve"
         app:layout_constraintLeft_toRightOf="@id/switch_debug"
-        app:layout_constraintTop_toBottomOf="@id/astar_view"/>
+        app:layout_constraintTop_toBottomOf="@id/zoom_layout"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_create_grid"
@@ -49,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="Create Grid"
         app:layout_constraintLeft_toRightOf="@id/button_solve"
-        app:layout_constraintTop_toBottomOf="@id/astar_view"/>
+        app:layout_constraintTop_toBottomOf="@id/zoom_layout"/>
 
     <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/seekbar_numTiles"
@@ -68,5 +96,14 @@
         android:min="10"
         android:progress="20"
         app:layout_constraintTop_toBottomOf="@+id/seekbar_numTiles" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekbar_maxPixelsPerTile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="1"
+        android:progress="4"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_percentWalls" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

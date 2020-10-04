@@ -9,6 +9,8 @@ import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var maxPixelsPerTile = 4
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,7 +37,8 @@ class MainActivity : AppCompatActivity() {
             astar_view.solve()
         }
 
-        seekbar_numTiles.max = resources.displayMetrics.widthPixels / 4
+        seekbar_numTiles.max = resources.displayMetrics.widthPixels / maxPixelsPerTile
+        astar_view.pixelsPerTile = maxPixelsPerTile
         seekbar_numTiles.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
                 astar_view.numTiles = progress
@@ -46,6 +49,23 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
+
+            }
+
+        })
+
+        seekbar_maxPixelsPerTile.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                maxPixelsPerTile = progress
+                astar_view.pixelsPerTile = progress
+                seekbar_numTiles.max = resources.displayMetrics.widthPixels / maxPixelsPerTile
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
             }
 
