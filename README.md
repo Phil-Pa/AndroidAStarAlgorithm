@@ -1,6 +1,6 @@
 ## This project is an Android app demonstrating the A\* Algorithm.
 
-<img src="preview.gif" width="250" height="900" />
+![Alt Text](preview.gif)
 
 It uses sophisticated datastructures to improve runtime performance. This makes to possible to find the shortest path from *A* to *B* for a grid size of 200 times 200 tiles in about 200 milliseconds (tested on Samsung Galaxy S8). Here are some further details:
 
