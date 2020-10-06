@@ -12,36 +12,36 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="vertical|horizontal"
+        app:alignment="center"
+        app:animationDuration="280"
+        app:flingEnabled="false"
+        app:hasClickableChildren="true"
+        app:horizontalPanEnabled="false"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:transformation="centerInside"
-        app:transformationGravity="auto"
-        app:alignment="center"
-        app:overScrollHorizontal="true"
-        app:overScrollVertical="true"
-        app:overPinchable="false"
-        app:horizontalPanEnabled="false"
-        app:verticalPanEnabled="false"
-        app:zoomEnabled="true"
-        app:flingEnabled="false"
-        app:scrollEnabled="true"
-        app:oneFingerScrollEnabled="false"
-        app:twoFingersScrollEnabled="true"
-        app:threeFingersScrollEnabled="true"
-        app:minZoom="0.5"
-        app:minZoomType="zoom"
         app:maxZoom="10.0"
         app:maxZoomType="zoom"
-        app:animationDuration="280"
-        app:hasClickableChildren="true">
+        app:minZoom="0.5"
+        app:minZoomType="zoom"
+        app:oneFingerScrollEnabled="false"
+        app:overPinchable="false"
+        app:overScrollHorizontal="true"
+        app:overScrollVertical="true"
+        app:scrollEnabled="true"
+        app:threeFingersScrollEnabled="true"
+        app:transformation="centerInside"
+        app:transformationGravity="auto"
+        app:twoFingersScrollEnabled="true"
+        app:verticalPanEnabled="false"
+        app:zoomEnabled="true">
 
         <de.phil.astaralgorithm.AStarAlgorithmView
             android:id="@+id/astar_view"
             android:layout_width="400dp"
             android:layout_height="400dp"
-            app:diagonal="false"
+            app:diagonal="true"
             app:numTiles="40"
             app:showDebugInformation="true" />
 
@@ -51,71 +51,149 @@
         android:id="@+id/spinner_tile_types"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/layout_configs"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zoom_layout" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_configs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spinner_tile_types"
         app:layout_constraintTop_toBottomOf="@id/zoom_layout"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_debug"
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/switch_debug"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:buttonTint="@color/colorPrimary"
+            android:text="Show debug info" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/switch_diagonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:buttonTint="@color/colorPrimary"
+            android:text="Allow diagonal" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
-        app:layout_constraintTop_toBottomOf="@id/zoom_layout"
-        app:layout_constraintLeft_toRightOf="@id/spinner_tile_types"
-        android:text="Debug"/>
+        android:layout_margin="16dp"
+        android:layout_marginBottom="156dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zoom_layout">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_solve"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of tiles" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seekbar_numTiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:isb_max="100"
+            app:isb_min="10"
+            app:isb_progress="20"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_show_thumb_text="true"
+            app:isb_thumb_text_color="@color/colorPrimary"
+            app:isb_indicator_color="@color/colorPrimary"
+            app:isb_thumb_color="@color/colorPrimary"
+            app:isb_track_progress_color="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_percentWalls"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Percent walls" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seekbar_percentWalls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:isb_max="100"
+            app:isb_min="10"
+            app:isb_progress="20"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_thumb_text_color="@color/colorPrimary"
+            app:isb_indicator_color="@color/colorPrimary"
+            app:isb_show_thumb_text="true"
+            app:isb_thumb_color="@color/colorPrimary"
+            app:isb_track_progress_color="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_maxPixelsPerTile" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Max pixels per tile" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/seekbar_maxPixelsPerTile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:isb_max="10"
+            app:isb_min="1"
+            app:isb_progress="4"
+            app:isb_thumb_text_color="@color/colorPrimary"
+            app:isb_indicator_color="@color/colorPrimary"
+            app:isb_show_indicator="circular_bubble"
+            app:isb_show_thumb_text="true"
+            app:isb_thumb_color="@color/colorPrimary"
+            app:isb_track_progress_color="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Solve"
-        app:layout_constraintLeft_toRightOf="@id/switch_debug"
-        app:layout_constraintTop_toBottomOf="@id/zoom_layout"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_create_grid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Grid"
-        app:layout_constraintLeft_toRightOf="@id/button_solve"
-        app:layout_constraintTop_toBottomOf="@id/zoom_layout"/>
-
-    <com.warkiz.widget.IndicatorSeekBar
-        android:id="@+id/seekbar_numTiles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isb_max="100"
-        app:isb_min="10"
-        app:isb_progress="20"
-        app:isb_show_indicator="circular_bubble"
-        app:layout_constraintTop_toBottomOf="@+id/button_solve" />
-
-    <com.warkiz.widget.IndicatorSeekBar
-        android:id="@+id/seekbar_percentWalls"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isb_max="100"
-        app:isb_min="10"
-        app:isb_progress="20"
-        app:isb_show_indicator="circular_bubble"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_numTiles" />
-
-    <com.warkiz.widget.IndicatorSeekBar
-        android:id="@+id/seekbar_maxPixelsPerTile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isb_max="10"
-        app:isb_min="1"
-        app:isb_progress="4"
-        app:isb_show_indicator="circular_bubble"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_percentWalls" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_resetZoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset Zoom"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
+        app:layout_constraintTop_toBottomOf="@+id/zoom_layout">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_solve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Solve" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_create_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Create Grid" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_resetZoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Reset Zoom" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

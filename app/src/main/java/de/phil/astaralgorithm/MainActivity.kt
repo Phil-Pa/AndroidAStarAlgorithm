@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         switch_debug.setOnCheckedChangeListener { compoundButton, debug ->
             astar_view.showDebugInfo = debug
         }
+        astar_view.showDebugInfo = switch_debug.isChecked
+
+        switch_diagonal.setOnCheckedChangeListener { compoundButton, diagonal ->
+            astar_view.diagonal = diagonal
+        }
+        astar_view.diagonal = switch_diagonal.isChecked
 
         button_solve.setOnClickListener {
             astar_view.solve()

@@ -8,7 +8,6 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.DisplayMetrics
 import android.view.MotionEvent
-import android.view.SurfaceHolder
 import android.view.View
 import de.phil.astaralgorithm.datastructure.Array2D
 import kotlin.math.roundToInt
@@ -16,7 +15,6 @@ import kotlin.system.measureTimeMillis
 
 
 class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, attrs) {
-//    SurfaceView(context, attrs), SurfaceHolder.Callback2 {
 
     companion object {
         private const val BASE_HORIZONTAL_OFFSET = 10f
@@ -30,6 +28,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
         get() = mNumTiles
         set(value) {
             mNumTiles = value
+            gridCreated = false
             grid = Array2D(numTiles, numTiles)
             initGrid()
             invalidate()
@@ -43,7 +42,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
     private var emptyTileColor = Color.GRAY
     private var debugTextColor = Color.RED
     private var openSetTileColor = Color.YELLOW
-    private var closedSetTileColor = Color.parseColor("#FF6600")
+    private var closedSetTileColor = Color.parseColor("#EE6600")
 
     private val paint = Paint()
     private val tileWidth: Int
@@ -52,7 +51,6 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             get() = height / numTiles
 
     private lateinit var grid: Array2D<Tile>
-    private var myHolder: SurfaceHolder? = null
 
     var tileTypePaint = TileType.WALL
     var animationsPerSecond = 2
@@ -62,6 +60,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
     private var lastTouchPositionX = 0f
     private var lastTouchPositionY = 0f
     private var lastSolveTimeMillis = 0L
+    private var gridCreated = false
 
     var showDebugInfo: Boolean
         get() = mShowDebugInformation
@@ -120,7 +119,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
                 pathTileColor = getColor(R.styleable.AStarAlgorithmView_pathTileColor, Color.GREEN)
 
                 emptyTileColor =
-                    getColor(R.styleable.AStarAlgorithmView_emptyTileColor, Color.GRAY)
+                    getColor(R.styleable.AStarAlgorithmView_emptyTileColor, Color.parseColor("#d6d6d6"))
                 openSetTileColor = getColor(R.styleable.AStarAlgorithmView_openSetTileColor, openSetTileColor)
                 closedSetTileColor = getColor(R.styleable.AStarAlgorithmView_closedSetTileColor, closedSetTileColor)
                 debugTextColor = getColor(R.styleable.AStarAlgorithmView_debugTextColor, Color.RED)
@@ -225,6 +224,12 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
     }
 
     private fun drawGridLines(canvas: Canvas) {
+
+        if (numTiles > 50 && !gridCreated) {
+            drawCreateGridText(canvas)
+            return
+        }
+
         paint.color = Color.BLACK
         val tileSize = width / numTiles.toFloat()
 
@@ -233,6 +238,22 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
             canvas.drawLine(0f, lineOffset, width.toFloat(), lineOffset, paint)
             canvas.drawLine(lineOffset, 0f, lineOffset, width.toFloat(), paint)
         }
+    }
+
+    private fun drawCreateGridText(canvas: Canvas) {
+        val text = "Use create grid!"
+        val textLength = measureLongestTextLength(text)
+
+        paint.textAlign = Paint.Align.CENTER
+        paint.textSize = 36f
+        paint.color = Color.BLACK
+
+        val xPos = canvas.width / 2f
+        val yPos = canvas.height / 2 - (paint.descent() + paint.ascent()) / 2f
+
+        canvas.drawText(text, xPos, yPos, paint)
+        paint.textAlign = Paint.Align.LEFT
+        paint.textSize = convertDpToPixel(DEBUG_TEXT_PADDING)
     }
 
     private fun drawGridBackground(canvas: Canvas) {
@@ -359,6 +380,7 @@ class AStarAlgorithmView(context: Context, attrs: AttributeSet) : View(context, 
 
     fun createRandomGrid(percentWalls: Int) {
         grid = AStarAlgorithm.createGrid(numTiles, percentWalls)
+        gridCreated = true
         invalidate()
     }
 
