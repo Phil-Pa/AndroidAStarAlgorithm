@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val spinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, TileType.values().map { it.toString() })
+
+        val strings = arrayOf("Tile to explore", "Explored tile", "Obstacle tile", "Walkable tile", "Shortest path tile", "Start path tile", "End path tile")
+        val spinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, strings)
 
         spinner_tile_types.adapter = spinnerAdapter
         spinner_tile_types.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
